@@ -157,6 +157,21 @@ img{
 }
 
 /*header-section--start*/
+.mm-wrapper--opened .mobile-menu img:first-child{
+    display: none;
+}
+.mm-wrapper--opened .mobile-menu img:last-child{
+    display: block;
+}
+.mm-wrapper--opened nav#menu{
+    display: block;
+}
+nav#menu{
+    display: none;
+}
+.mobile-menu{
+    display: none;
+}
 header{
 	@extend .float;
 	padding-top: 25px;
@@ -167,11 +182,30 @@ header{
 		padding-top: 20px;
 		padding-bottom: 20px;
 	}
+	.mobile-menu{
+		@include breakpoint(sm){
+			display: block;
+			text-align: left;
+			position: absolute;
+			top: 30px;
+			z-index: 1;
+		}
+		a{
+			img{
+				&:last-child {
+					display: none;
+				}
+			}
+		}
+	}
 	.logo{
 		display: table-cell;
 		vertical-align: middle;
 		width: 66px;
 		height: 65px;
+		@include breakpoint(sm){
+			position: relative;
+		}
 	}
 	nav{
 		display: table-cell;
@@ -207,6 +241,7 @@ header{
 		text-align: right;
 		width: 30px;
 		height: 30px;
+		cursor: pointer;
 		@include breakpoint(sm){
 			display: none;
 		}
@@ -292,6 +327,10 @@ header{
 			padding: 20px 40px;
 			background: $middle-color;
 			border-radius: 25px;
+			&:hover{
+					color: $banner-color;
+					background: $primary-color;
+				}
 			@include breakpoint(xl){
 				font-size: 20px;
 				line-height: 22px;
@@ -783,6 +822,10 @@ header{
 				background: $primary-color;
 				color: #fff;
 				border-radius: 0 25px 25px 0;
+				cursor: pointer;
+				&:hover{
+					color: $button-color;
+				}
 			}
         }
 	}
@@ -851,12 +894,17 @@ footer{
 			}
 		}
 		.footer-icon{
+			a{
 			img{
 				padding-right: 10px;
 				@include breakpoint(xl){
 					width: 40px;
 				}
 			}
+			&:hover{
+				 opacity: 0.8;
+		    }
+		}
 		}
 	}
 	.footer-right{
@@ -902,6 +950,9 @@ footer{
 						line-height: 27px;
 						color: $a-color;
 						font-weight: 400;
+						&:hover{
+					      color: $banner-color;
+				        }
 						@include breakpoint(xl){
 							font-size: 20px;
 							line-height: 22px;
@@ -917,7 +968,7 @@ footer{
 	}
 }
 
-
-
 /*footer-section--end*/
+
+
 

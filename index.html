@@ -4,20 +4,33 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>sass exampal</title>
 	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<link rel="stylesheet" type="text/css" href="css/mmenu.css">
+
 </head>
 <body>
 
 
-
 <!-- header-section----start -->
-
+<div id="page">
 	<header>
+		<div class="mobile-menu">
+			<a href="#menu" title=""><img width="30px" src="images/menu.png" alt=""><img width="30px" src="images/close.png" alt=""></a>
+		</div>
 		<div class="row">
 		  <div class="table">
 		    <div class="logo">
 			   <a href="#" title="logo"><img src="images/logo.png" alt=""></a>
 		    </div>
-		    <nav>
+		    <nav id="menu">
+			    <ul>
+				    <li><a href="#" title="Home">Home</a></li>
+				    <li><a href="#" title="EVENT">EVENT</a></li>
+				    <li><a href="#" title="AbouT">AbouT</a></li>
+				    <li><a href="#" title="ARTIST">ARTIST</a></li>
+				    <li><a href="#" title="Contact">Contact</a></li>
+			    </ul>
+		    </nav>
+		     <nav>
 			    <ul>
 				    <li><a href="#" title="Home">Home</a></li>
 				    <li><a href="#" title="EVENT">EVENT</a></li>
@@ -132,7 +145,7 @@
 
 <!-- concert-c-section----end -->
 
-<!-- our-statistics-section----start -->
+our-statistics-section----start
 <section class="our-statistics">
 	<div class="row">
 		<div class="our-title">
@@ -215,10 +228,10 @@
 			<h4>Music URBAN</h4>
 			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam at dignissim nunc, id maximus ex. Etiam nec dignissim elit, at dignissim enim. </p>
 			<div class="footer-icon">
-				<img src="images/insta-i.png" alt="">
-				<img src="images/fack-i.png" alt="">
-				<img src="images/tw-i.png" alt="">
-				<img src="images/whats-i.png" alt="">
+				<a href="#" title=""><img src="images/insta-i.png" alt=""></a>
+				<a href="#" title=""><img src="images/fack-i.png" alt=""></a>
+				<a href="#" title=""><img src="images/tw-i.png" alt=""></a>
+				<a href="#" title=""><img src="images/whats-i.png" alt=""></a>
 			</div>
 		</div>
 		<div class="footer-right">
@@ -253,7 +266,41 @@
 		</div>
 	</div>
 </footer>
+
+
+
+</div>
 <!-- footer-section----end -->
+
+<script type="text/javascript" src="js/jquery-3.7.1.js"></script>
+<script type="text/javascript" src="js/mmenu.js"></script>
+<script type="text/javascript">
+	
+
+
+ document.addEventListener('DOMContentLoaded', () => {
+
+                                    new Mmenu("#menu", {        theme       : "white",
+        navbars     : {
+            content : [ "prev", "title" ]
+        },
+    
+        setSelected : {
+            hover: true
+        }}, {});
+                
+                            });
+
+</script>
+
+
+
+
+
+
+
+
+
 
 
 
